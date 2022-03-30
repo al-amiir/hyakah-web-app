@@ -1,0 +1,25 @@
+.header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  &_person {
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 3px;
+    margin-right: 10px;
+  }
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 130px;
+    padding: 5px;
+    &:hover {
+      outline: 1px solid;
+      border-radius: 3px;
+    }
+  }
+}

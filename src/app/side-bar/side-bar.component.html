@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <div class="sidebar_logo">
+    <img [src]="logoLink.icon" alt="icon" />
+    <a [routerLink]="logoLink.link">{{ logoLink.name }}</a>
+  </div>
+  <div class="sidebar_links">
+    <a [routerLink]="link.link" *ngFor="let link of sideBArLinks">
+      <img [src]="link.icon" alt="icon" />
+      <p>{{ link.name }}</p>
+      <!-- <>{{ link.name }}</> -->
+    </a>
+  </div>
+</div>

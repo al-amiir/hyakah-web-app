@@ -1,0 +1,30 @@
+.sidebar {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #2d3652;
+  &_logo {
+    display: flex;
+    align-items: center;
+    & a {
+      color: white;
+    }
+  }
+  &_links a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 33px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #fcd844;
+      color: #2d3652;
+    }
+  }
+  img {
+    margin-right: 10px;
+  }
+}

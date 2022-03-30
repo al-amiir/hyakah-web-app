@@ -1,0 +1,62 @@
+<div class="form_container">
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="formValues.name"
+        required
+        #name="ngModel"
+      />
+      <span [hidden]="name.valid || name.pristine"> Name is required </span>
+    </div>
+
+    <div>
+      <label for="price">Price</label>
+      <input
+        type="number"
+        name="price"
+        [(ngModel)]="formValues.price"
+        #price="ngModel"
+        required
+      />
+      <span [hidden]="price.valid || price.pristine"> Price is required </span>
+    </div>
+
+    <div class="form_container-image">
+      <label for="image">Images</label>
+      <input
+        type="text"
+        name="image"
+        [(ngModel)]="formValues.images"
+        #imgae="ngModel"
+        placeholder="Drag & Drop or Browse"
+        required
+      />
+      <span [hidden]="imgae.valid || imgae.pristine"> Image is required </span>
+    </div>
+
+    <div>
+      <label for="cost">Cost</label>
+      <input type="number" name="cost" [(ngModel)]="formValues.cost" />
+    </div>
+
+    <div>
+      <label for="quantity">Quantity</label>
+      <input type="number" name="quantity" [(ngModel)]="formValues.quantity" />
+    </div>
+
+    <div class="form_container-buttons">
+      <button (click)="cancel(); productForm.reset()">Cancel</button>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!productForm.form.valid"
+        (click)="onSubmit(); productForm.reset()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

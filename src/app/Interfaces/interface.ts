@@ -3,3 +3,11 @@ export interface SideBArLinksInterface {
   name: string;
   link: string;
 }
+
+export interface ProductListInterface {
+  name: string;
+  price: number;
+  cost: number;
+  quantity: number;
+  images: string;
+}

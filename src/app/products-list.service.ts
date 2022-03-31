@@ -7,28 +7,38 @@ import { Injectable } from '@angular/core';
 export class ProductsListService {
   products: ProductListInterface[] = [];
   formWidth: string = '0vw';
+  quantityFormWidth: string = '0vw';
+  selectedProductId: number = 0;
 
-  add(value: any): void {
+  addNewProduct(value: any): void {
     this.products.unshift(value);
   }
-  edit(id: number, cost: number, quantity: number): void {
+
+  editSelectedProductId(value: number): void {
+    this.selectedProductId = value;
+  }
+
+  editProduct(id: number, cost: number, quantity: number): void {
     // First get current values
     let currentAvgCost =
       this.products[id].cost === null ? 0 : this.products[id].cost;
-    let currentAvgQuantity =
+    let currentQuantity =
       this.products[id].quantity === null ? 0 : this.products[id].quantity;
 
     // Second change the cost with the required equation
     this.products[id].cost =
-      (currentAvgCost * currentAvgQuantity + cost) /
-      (currentAvgQuantity + quantity);
+      (currentAvgCost * currentQuantity + cost) / (currentQuantity + quantity);
 
     // Third change the quantity
-    this.products[id].quantity = quantity;
+    this.products[id].quantity = quantity + currentQuantity;
 
     console.log(this.products[id]);
   }
+
   changeFormWidth(value: string): void {
     this.formWidth = value;
+  }
+  changeQuantityFormWidth(value: string): void {
+    this.quantityFormWidth = value;
   }
 }

@@ -1,0 +1,46 @@
+<div
+  class="form_container"
+  [style.width]="productListService.quantityFormWidth"
+>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="cost">Cost</label>
+      <input
+        type="number"
+        name="cost"
+        [(ngModel)]="quantityFormValues.cost"
+        #cost="ngModel"
+        required
+      />
+      <span [hidden]="cost.valid || cost.pristine"> Cost is required </span>
+    </div>
+
+    <div>
+      <label for="quantity">Quantity</label>
+      <input
+        type="number"
+        name="quantity"
+        [(ngModel)]="quantityFormValues.quantity"
+        #quantity="ngModel"
+        required
+      />
+      <span [hidden]="quantity.valid || quantity.pristine">
+        Quantity is required
+      </span>
+    </div>
+
+    <div class="form_container-buttons">
+      <button type="button" (click)="cancel(); productForm.reset()">
+        Cancel
+      </button>
+      <button
+        [ngStyle]="productForm.form.valid ? ableButton : disabledButton"
+        type="submit"
+        [disabled]="!productForm.form.valid"
+        (click)="onSubmit(); productForm.reset()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

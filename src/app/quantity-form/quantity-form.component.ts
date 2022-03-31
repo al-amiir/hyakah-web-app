@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsListService } from '../products-list.service';
+
 @Component({
-  selector: 'app-product-form',
-  templateUrl: './product-form.component.html',
-  styleUrls: ['./product-form.component.scss'],
+  selector: 'app-quantity-form',
+  templateUrl: './quantity-form.component.html',
+  styleUrls: ['./quantity-form.component.scss'],
 })
-export class ProductFormComponent implements OnInit {
+export class QuantityFormComponent implements OnInit {
   disabledButton = {
     color: '#c4c4c4',
     border: '#c4c4c4',
@@ -18,10 +19,7 @@ export class ProductFormComponent implements OnInit {
     cursor: 'pointer',
   };
 
-  formValues = {
-    name: '',
-    images: '',
-    price: '',
+  quantityFormValues = {
     cost: null,
     quantity: null,
   };
@@ -29,20 +27,22 @@ export class ProductFormComponent implements OnInit {
 
   ngOnInit(): void {}
   resetFromValues(): void {
-    this.formValues = {
-      name: '',
-      images: '',
-      price: '',
+    this.quantityFormValues = {
       cost: null,
       quantity: null,
     };
   }
   onSubmit(): void {
-    this.productListService.addNewProduct(this.formValues);
+    // this.productListService.add(this.quantityFormValues);
+    this.productListService.editProduct(
+      this.productListService.selectedProductId,
+      this.quantityFormValues.quantity || 0,
+      this.quantityFormValues.cost || 0
+    );
     this.resetFromValues();
-    this.productListService.changeFormWidth('0vw');
+    this.productListService.changeQuantityFormWidth('0vw');
   }
   cancel(): void {
-    this.productListService.changeFormWidth('0vw');
+    this.productListService.changeQuantityFormWidth('0vw');
   }
 }

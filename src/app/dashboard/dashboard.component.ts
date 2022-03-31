@@ -11,7 +11,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
   addMoreQuantity(value: number): void {
-    this.productList.edit(value, 50, 50);
-    console.log(value);
+    this.productList.changeQuantityFormWidth('100vw');
+    this.productList.editSelectedProductId(value);
+    // this.productList.edit(value, 50, 50);
+    // console.log(value);
   }
 }

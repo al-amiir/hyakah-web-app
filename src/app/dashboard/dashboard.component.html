@@ -7,14 +7,14 @@
     <th>Price</th>
     <th></th>
   </tr>
-  <tr *ngFor="let prod of productList.products">
+  <tr *ngFor="let prod of productList.products; let i = index">
     <td>{{ prod.images }}</td>
     <td>{{ prod.name }}</td>
-    <td>{{ prod.quantity }}</td>
-    <td>{{ prod.cost }}</td>
+    <td>{{ prod.quantity === null ? "_" : prod.quantity }}</td>
+    <td>{{ prod.cost === null ? "_" : prod.cost }}</td>
     <td>{{ prod.price }}</td>
     <td>
-      <button>
+      <button (click)="addMoreQuantity(i)">
         <img
           src="https://img.icons8.com/ios-glyphs/45/fa314a/macos-maximize.png"
         />

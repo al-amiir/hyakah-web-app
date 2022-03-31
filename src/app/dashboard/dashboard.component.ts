@@ -10,4 +10,8 @@ export class DashboardComponent implements OnInit {
   constructor(public productList: ProductsListService) {}
 
   ngOnInit(): void {}
+  addMoreQuantity(value: number): void {
+    this.productList.edit(value, 50, 50);
+    console.log(value);
+  }
 }

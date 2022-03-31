@@ -22,8 +22,8 @@ export class ProductFormComponent implements OnInit {
     name: '',
     images: '',
     price: '',
-    cost: '_',
-    quantity: '_',
+    cost: null,
+    quantity: null,
   };
   constructor(public productListService: ProductsListService) {}
 
@@ -33,8 +33,8 @@ export class ProductFormComponent implements OnInit {
       name: '',
       images: '',
       price: '',
-      cost: '_',
-      quantity: '_',
+      cost: null,
+      quantity: null,
     };
   }
   onSubmit(): void {

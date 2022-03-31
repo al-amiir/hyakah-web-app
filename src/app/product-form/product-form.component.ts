@@ -1,21 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsListService } from '../products-list.service';
-import { ProductListInterface } from '../Interfaces/interface';
-
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.scss'],
 })
 export class ProductFormComponent implements OnInit {
+  disabledButton = {
+    color: '#c4c4c4',
+    border: '#c4c4c4',
+    cursor: 'not-allowed',
+  };
+  ableButton = {
+    color: 'white',
+    backgroundColor: '#ef7139',
+    border: ' 2px solid #ef7139',
+    cursor: 'pointer',
+  };
+
   formValues = {
     name: '',
     images: '',
     price: '',
-    cost: '',
-    quantity: '',
+    cost: '_',
+    quantity: '_',
   };
-  constructor(private sendFromValues: ProductsListService) {}
+  constructor(public productListService: ProductsListService) {}
 
   ngOnInit(): void {}
   resetFromValues(): void {
@@ -23,15 +33,16 @@ export class ProductFormComponent implements OnInit {
       name: '',
       images: '',
       price: '',
-      cost: '',
-      quantity: '',
+      cost: '_',
+      quantity: '_',
     };
   }
   onSubmit(): void {
-    this.sendFromValues.add(this.formValues);
+    this.productListService.add(this.formValues);
     this.resetFromValues();
+    this.productListService.changeFormWidth('0vw');
   }
   cancel(): void {
-    this.resetFromValues();
+    this.productListService.changeFormWidth('0vw');
   }
 }

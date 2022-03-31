@@ -1,4 +1,4 @@
-<div class="form_container">
+<div class="form_container" [style.width]="productListService.formWidth">
   <form #productForm="ngForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="name">Name</label>
@@ -48,10 +48,12 @@
     </div>
 
     <div class="form_container-buttons">
-      <button (click)="cancel(); productForm.reset()">Cancel</button>
+      <button type="button" (click)="cancel(); productForm.reset()">
+        Cancel
+      </button>
       <button
+        [ngStyle]="productForm.form.valid ? ableButton : disabledButton"
         type="submit"
-        class="btn btn-success"
         [disabled]="!productForm.form.valid"
         (click)="onSubmit(); productForm.reset()"
       >

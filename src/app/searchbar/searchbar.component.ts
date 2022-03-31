@@ -12,5 +12,10 @@ export class SearchbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addButton() {}
+  addButton(): void {
+    // this.formWidth = `${100 + Math.random()}vw`;
+    // this.formWidth = '100vw';
+    // this.productList.console.log(this.formWidth);
+    this.productList.changeFormWidth('100vw');
+  }
 }

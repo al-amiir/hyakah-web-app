@@ -6,8 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsListService {
   products: ProductListInterface[] = [];
-  constructor() {}
+  formWidth: string = '0vw';
+
   add(value: any): void {
     this.products.push(value);
+  }
+
+  changeFormWidth(value: string): void {
+    this.formWidth = value;
   }
 }

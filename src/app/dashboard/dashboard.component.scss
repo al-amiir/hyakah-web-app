@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+
+  tr {
+    height: 85px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  tr:nth-child(1) {
+    box-shadow: 3px 3px 7px 0px #e2e2e2;
+    color: #707070;
+    border: none;
+    height: 60px;
+
+    th {
+      font-weight: 400;
+      width: 160px;
+      &:nth-child(1) {
+        padding-left: 30px;
+      }
+    }
+  }
+  td {
+    // border-bottom: 1px solid black;
+  }
+  td:nth-child(1) {
+    padding-left: 30px;
+  }
+  td:nth-child(6) {
+    justify-content: end;
+    padding-right: 30px;
+    text-align: right;
+  }
+}

@@ -1,0 +1,32 @@
+.searchBar {
+  padding: 0px 30px;
+  background-color: #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  &-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 0 8px #838383;
+    padding: 0px 30px;
+
+    input {
+      height: 45px;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      border-radius: 40px;
+    }
+  }
+  button {
+    img {
+      filter: hue-rotate(4deg);
+    }
+  }
+}

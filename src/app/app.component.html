@@ -1,11 +1,36 @@
 <div class="app">
   <app-side-bar></app-side-bar>
-  <div>
+  <div class="app_content">
     <app-header></app-header>
     <app-searchbar></app-searchbar>
     <router-outlet></router-outlet>
   </div>
-  <!-- fixed component -->
-  <app-product-form></app-product-form>
-  <app-quantity-form></app-quantity-form>
+  <!-- <div class="speedometer">
+    <div class="colors">
+      <span class="yellow"></span>
+      <span class="red"></span>
+      <span class="green"></span>
+      <span class="colors_hole"></span>
+      <div class="cursor">
+        <div class="cursor_line"></div>
+        <div class="cursor_circle"></div>
+      </div>
+    </div>
+  </div> -->
+  <div class="speedometer">
+    <div class="circles">
+      <span class="one"></span>
+      <span class="two"></span>
+      <span class="three"></span>
+      <span class="four"></span>
+      <span class="five"></span>
+      <div class="cursor">
+        <div class="cursor_line"></div>
+        <div class="cursor_circle"></div>
+      </div>
+    </div>
+    <!-- fixed component -->
+    <app-product-form></app-product-form>
+    <app-quantity-form></app-quantity-form>
+  </div>
 </div>

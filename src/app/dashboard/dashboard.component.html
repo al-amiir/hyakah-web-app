@@ -7,41 +7,7 @@
     <span>Price</span>
     <span></span>
   </div>
-
-  <div
-    class="dashboard_content"
-    *ngFor="let prod of productList.products; let i = index"
-  >
-    <div class="dashboard_content-top">
-      <span class="dashboard_content-top--image">{{ prod.images }}</span>
-      <span>{{ prod.name }}</span>
-      <span>{{ prod.quantity === null ? "_" : prod.quantity }}</span>
-      <span>
-        {{ prod.cost === null ? "_" : prod.cost }}
-      </span>
-      <span>{{ prod.price }}</span>
-      <span class="dashboard_content-top--button">
-        <button (click)="addMoreQuantity(i)">
-          <img
-            src="https://img.icons8.com/ios-glyphs/45/fa314a/macos-maximize.png"
-          />
-        </button>
-      </span>
-    </div>
-
-    <div class="dashboard_content-bottom">
-      <div class="speedometer">
-        <div class="circles">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-          <span class="four"></span>
-          <div class="cursor">
-            <div class="cursor_line"></div>
-            <div class="cursor_circle"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div *ngFor="let prod of productList.products; let i = index">
+    <app-dashboard-content [prod]="prod" [i]="i"></app-dashboard-content>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuantityFormComponent } from './quantity-form/quantity-form.component';
+import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { QuantityFormComponent } from './quantity-form/quantity-form.component';
     ProductFormComponent,
     DashboardComponent,
     QuantityFormComponent,
+    DashboardContentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

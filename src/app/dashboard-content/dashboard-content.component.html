@@ -1,0 +1,40 @@
+<div class="dashboard_content" (click)="toggle($event)">
+  <!-- top -->
+  <div class="dashboard_content-top">
+    <span class="dashboard_content-top--image">
+      <img
+        src="https://img.icons8.com/material-two-tone/24/000000/expand-arrow--v1.png"
+        [style.transform]="rotate"
+      />
+      <img [src]="prod.images" alt="Product's image" />
+    </span>
+    <span>{{ prod.name }}</span>
+    <span>{{ prod.quantity === null ? "_" : prod.quantity }}</span>
+    <span>
+      {{ prod.cost === null ? "_" : prod.cost }}
+    </span>
+    <span>{{ prod.price }}</span>
+    <span class="dashboard_content-top--button">
+      <button (click)="addMoreQuantity(i)">
+        <img
+          src="https://img.icons8.com/ios-glyphs/45/fa314a/macos-maximize.png"
+        />
+      </button>
+    </span>
+  </div>
+  <!-- bottom -->
+  <div class="dashboard_content-bottom" [style.height]="height">
+    <div class="speedometer">
+      <div class="circles">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+        <span class="four"></span>
+        <div class="cursor" [style.transform]="speedometerRotation">
+          <div class="cursor_line"></div>
+          <div class="cursor_circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
   justify-content: end;
   align-items: center;
   padding: 0px 30px;
-  background-color: white;
+  background-color: #1f030270;
   &_person {
     border: 2px solid;
     border-radius: 50px;
@@ -17,8 +17,11 @@
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    width: 130px;
+    width: 150px;
     padding: 5px;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 1px;
     &:hover {
       outline: 1px solid;
       border-radius: 3px;

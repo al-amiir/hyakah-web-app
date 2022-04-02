@@ -7,8 +7,8 @@ import { SideBArLinksInterface } from './../Interfaces/interface';
 })
 export class SideBarComponent implements OnInit {
   logoLink: SideBArLinksInterface = {
-    icon: 'https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/40/000000/external-circles-graphic-design-vitaliy-gorbachev-blue-vitaly-gorbachev.png',
-    name: 'Hayakah Store',
+    icon: 'https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/50/000000/external-royal-flowers-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png',
+    name: 'Hyakah Store',
     link: '',
   };
   sideBArLinks: SideBArLinksInterface[] = [

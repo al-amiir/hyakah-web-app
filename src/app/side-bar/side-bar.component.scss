@@ -4,28 +4,43 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  background-color: #2d3652;
+  background-color: #200302;
+  backdrop-filter: blur(3px);
+  @media (max-width: 960px) {
+    position: fixed;
+    height: 100vh;
+    left: -200px;
+  }
   &_logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 40px 10px 20px;
+    border-bottom: 1px solid #e2e2e2;
+    margin: 0px 16px;
     & a {
       color: white;
     }
   }
-  &_links a {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 33px;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-    &:hover {
-      background-color: #fcd844;
-      color: #2d3652;
+  &_links {
+    margin-top: 50px;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 33px;
+      color: white;
+      transition: 0.3s ease-out;
+      cursor: pointer;
+      &:hover {
+        background-color: #0038fc;
+        // color: #2d3652;
+        filter: invert(1);
+      }
     }
-  }
-  img {
-    margin-right: 10px;
+    img {
+      margin-right: 10px;
+    }
   }
 }

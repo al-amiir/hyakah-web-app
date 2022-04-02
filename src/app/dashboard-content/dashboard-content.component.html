@@ -3,10 +3,15 @@
   <div class="dashboard_content-top">
     <span class="dashboard_content-top--image">
       <img
-        src="https://img.icons8.com/material-two-tone/24/000000/expand-arrow--v1.png"
+        class="dashboard_content-top--image-arrow"
+        src="https://img.icons8.com/material-two-tone/24/ffffff/expand-arrow--v1.png"
         [style.transform]="rotate"
       />
-      <img [src]="prod.images" alt="Product's image" />
+      <img
+        class="dashboard_content-top--image-product"
+        [src]="prod.images"
+        alt="Product's image"
+      />
     </span>
     <span>{{ prod.name }}</span>
     <span>{{ prod.quantity === null ? "_" : prod.quantity }}</span>
@@ -18,7 +23,7 @@
       <button (click)="addMoreQuantity(i)">
         <img
           id="plusButton"
-          src="https://img.icons8.com/ios-glyphs/45/fa314a/macos-maximize.png"
+          src="https://img.icons8.com/ios/31/000000/edit--v1.png"
         />
       </button>
     </span>
@@ -36,6 +41,10 @@
           <div class="cursor_circle"></div>
         </div>
       </div>
+    </div>
+    <div>
+      <p>You are in the {{ profitMarginZone }} Zone</p>
+      <p>Your profit-margin is {{ profitMargin }}</p>
     </div>
   </div>
 </div>

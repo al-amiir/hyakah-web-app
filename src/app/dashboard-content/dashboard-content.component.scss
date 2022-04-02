@@ -2,7 +2,6 @@
   &_content {
     display: flex;
     flex-direction: column;
-    /* border-bottom: 1px solid #e2e2e2; */
     overflow: hidden;
     cursor: pointer;
     color: #00c7cf;
@@ -11,36 +10,62 @@
       grid-template-columns: repeat(5, minmax(1rem, 10rem)) 1fr;
       height: 100px;
       align-items: center;
+      font-size: 0.9rem;
+      @media (max-width: 500px) {
+        position: relative;
+        grid-template-columns: repeat(4, minmax(1rem, 10rem));
+        justify-items: center;
+        font-size: 0.8rem;
+      }
       &--image {
-        margin-left: 30px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        img {
+        justify-content: center;
+        &-arrow {
+          background-color: red;
+          border-radius: 5px;
+          border-radius: 3px;
           transition: 0.3s;
+        }
+        @media (max-width: 500px) {
+          position: absolute;
+          bottom: 7px;
+          left: 46%;
+          transform: translate(-50%);
+          &-product {
+            display: none;
+          }
         }
       }
       &--button {
         justify-self: end;
         margin-right: 30px;
+        @media (max-width: 500px) {
+          position: absolute;
+          bottom: 0;
+          left: 54%;
+          transform: translate(-50%) scale(0.7);
+        }
+        #plusButton {
+          background-color: #51c7cf;
+          border-radius: 5px;
+          filter: drop-shadow(2px 4px 6px black);
+          padding: 1px;
+        }
       }
     }
     &-bottom {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(1rem, 10rem)) minmax(3rem, 1fr);
-      height: 0px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      height: 0px;
       overflow: hidden;
       background-color: #052023;
-      box-shadow: #000000 5px 3px 7px 0px inset;
+      box-shadow: #000000 5px 3px 7px 0px inset, inset -3px -2px 6px black;
       transition: 0.3s;
       border-radius: 7px;
-      /* border-top: 1px solid; */
       padding: 4px;
-      margin: 0px 16px;
-      .speedometer {
-        grid-column: 5/6;
-      }
+      margin: 0px 10px;
     }
   }
 }
@@ -50,6 +75,7 @@
   overflow: hidden;
   filter: drop-shadow(0px 0px 4px black);
   padding: 6px;
+  margin-bottom: 5px;
   .circles {
     width: 100%;
     height: 100%;

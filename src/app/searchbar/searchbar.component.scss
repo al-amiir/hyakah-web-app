@@ -1,20 +1,20 @@
 .searchBar {
-  padding: 0px 30px;
+  padding: 0px 10px;
   background-color: #e2e2e200;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100px;
   &-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 50%;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 0 0 8px #838383;
+    box-shadow: 0 0 8px #000000;
     padding: 0px 30px;
-
+    margin-right: 10px;
     input {
       height: 45px;
       width: 100%;
@@ -25,8 +25,12 @@
     }
   }
   button {
+    display: flex;
+    align-items: center;
     img {
-      filter: hue-rotate(4deg);
+      background-color: #07191e;
+      border-radius: 7px;
+      border: 2px solid;
     }
   }
 }

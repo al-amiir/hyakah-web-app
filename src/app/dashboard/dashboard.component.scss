@@ -1,7 +1,6 @@
 .dashboard {
-  margin: 11px;
+  margin: 6px;
   border-radius: 5px;
-  /* background-image: linear-gradient(45deg, #ffffff, #6effa4); */
   box-shadow: 0px 1px 6px 0px black;
   padding: 20px 4px;
   backdrop-filter: blur(20px);
@@ -11,9 +10,18 @@
     border-bottom: 1px solid;
     height: 60px;
     display: grid;
-    grid-template-columns: repeat(5, minmax(1rem, 10rem)) minmax(5rem, 1fr);
+    grid-template-columns: repeat(5, minmax(1rem, 10rem)) minmax(4rem, 1fr);
     align-items: center;
-    /* font-weight: 600; */
     letter-spacing: 3px;
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(4, minmax(1rem, 10rem));
+      justify-items: center;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      span:nth-child(1),
+      span:nth-child(6) {
+        display: none;
+      }
+    }
   }
 }

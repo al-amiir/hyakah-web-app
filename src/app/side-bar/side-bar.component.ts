@@ -6,6 +6,8 @@ import { SideBArLinksInterface } from './../Interfaces/interface';
   styleUrls: ['./side-bar.component.scss'],
 })
 export class SideBarComponent implements OnInit {
+  sidebarWidth = '200px';
+  sidebarLeft = '-200px';
   logoLink: SideBArLinksInterface = {
     icon: 'https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/50/000000/external-royal-flowers-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png',
     name: 'Hyakah Store',
@@ -23,12 +25,44 @@ export class SideBarComponent implements OnInit {
       link: '/sales',
     },
     {
-      icon: 'https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/15/ffffff/external-wallet-business-kiranshastry-lineal-kiranshastry-3.png',
+      icon: 'https://img.icons8.com/ios/16/ffffff/bank-card-front-side--v1.png',
       name: 'Expenses',
       link: '/expenses',
     },
+    {
+      icon: 'https://img.icons8.com/dotty/15/ffffff/warehouse--v1.png',
+      name: 'Inventory',
+      link: '/inventory',
+    },
+    {
+      icon: 'https://img.icons8.com/external-smashingstocks-detailed-outline-smashing-stocks/15/ffffff/external-accounting-accounting-smashingstocks-detailed-outline-smashing-stocks-11.png',
+      name: 'Accounting',
+      link: '/accounting',
+    },
+    {
+      icon: 'https://img.icons8.com/ios/15/ffffff/document--v1.png',
+      name: 'Documents',
+      link: '/documents',
+    },
+    {
+      icon: 'https://img.icons8.com/windows/15/ffffff/store-front.png',
+      name: 'Store',
+      link: '/store',
+    },
   ];
-  constructor() {}
-
   ngOnInit(): void {}
+  expandSidebar(): void {
+    if (window.innerWidth > 960) {
+      this.sidebarLeft = '0px';
+      this.sidebarWidth === '200px'
+        ? (this.sidebarWidth = '0px')
+        : (this.sidebarWidth = '200px');
+    }
+    if (window.innerWidth < 960) {
+      this.sidebarWidth = '200px';
+      this.sidebarLeft === '-200px'
+        ? (this.sidebarLeft = '0px')
+        : (this.sidebarLeft = '-200px');
+    }
+  }
 }

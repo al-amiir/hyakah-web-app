@@ -1,5 +1,9 @@
 <div class="form_container" [style.width]="productListService.formWidth">
   <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <!-- Header  -->
+    <p>Add New Product</p>
+
+    <!-- Name Input  -->
     <div>
       <label for="name">Name</label>
       <input
@@ -12,6 +16,7 @@
       <span [hidden]="name.valid || name.pristine"> Name is required </span>
     </div>
 
+    <!-- Price Input -->
     <div>
       <label for="price">Price</label>
       <input
@@ -24,6 +29,7 @@
       <span [hidden]="price.valid || price.pristine"> Price is required </span>
     </div>
 
+    <!-- Image Input -->
     <div class="form_container-image">
       <label for="image">Images</label>
       <input
@@ -37,16 +43,19 @@
       <span [hidden]="imgae.valid || imgae.pristine"> Image is required </span>
     </div>
 
+    <!-- Cost Input  -->
     <div>
       <label for="cost">Cost</label>
       <input type="number" name="cost" [(ngModel)]="formValues.cost" />
     </div>
 
+    <!-- Quantity Input -->
     <div>
       <label for="quantity">Quantity</label>
       <input type="number" name="quantity" [(ngModel)]="formValues.quantity" />
     </div>
 
+    <!-- Form Buttons  -->
     <div class="form_container-buttons">
       <button type="button" (click)="cancel(); productForm.reset()">
         Cancel

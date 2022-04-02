@@ -6,12 +6,12 @@
   backdrop-filter: blur(20px);
   background-color: #000000b8;
   &_header {
-    color: #ffffff;
-    border-bottom: 1px solid;
-    height: 60px;
     display: grid;
     grid-template-columns: repeat(5, minmax(1rem, 10rem)) minmax(4rem, 1fr);
     align-items: center;
+    color: #ffffff;
+    border-bottom: 1px solid;
+    height: 60px;
     letter-spacing: 3px;
     @media (max-width: 500px) {
       grid-template-columns: repeat(4, minmax(1rem, 10rem));

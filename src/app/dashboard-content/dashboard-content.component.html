@@ -1,5 +1,5 @@
 <div class="dashboard_content" (click)="toggle($event)">
-  <!-- top -->
+  <!-- Top Content-->
   <div class="dashboard_content-top">
     <span class="dashboard_content-top--image">
       <img
@@ -19,11 +19,11 @@
       SAR {{ prod.cost === null ? "_" : (prod.cost | number: "1.2-2") }}
     </span>
     <span>SAR {{ prod.price | number: "1.2-2" }}</span>
-    <span class="dashboard_content-top--button">
+    <span class="dashboard_content-top--button-edit">
       <button (click)="addMoreQuantity(i)">
         <img
-          id="plusButton"
-          src="https://img.icons8.com/ios/31/000000/edit--v1.png"
+          id="button-edit"
+          src="https://img.icons8.com/ios/22/000000/edit--v1.png"
         />
       </button>
     </span>
@@ -42,9 +42,9 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="dashboard_content-bottom-profitmargin">
       <p>You are in the {{ profitMarginZone }} Zone</p>
-      <p>Your profit-margin is {{ profitMargin }}</p>
+      <p>Your profit-margin is {{ profitMargin }}%</p>
     </div>
   </div>
 </div>

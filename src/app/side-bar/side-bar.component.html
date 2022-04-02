@@ -1,11 +1,22 @@
-<div class="sidebar">
-  <button class="sidebar_button-menu">
-    <img src="https://img.icons8.com/ios-filled/50/000000/menu-rounded.png" />
+<!-- Expand Sidebar Button  -->
+<button class="sidebar_button-menu-expand" (click)="expandSidebar()">
+  <img src="https://img.icons8.com/ios/35/ffffff/long-arrow-right.png" />
+</button>
+
+<!-- Sidebar  -->
+<div class="sidebar" [style.width]="sidebarWidth" [style.left]="sidebarLeft">
+  <!-- Hide Sidebar Button -->
+  <button class="sidebar_button-menu-hide" (click)="expandSidebar()">
+    <img src="https://img.icons8.com/ios/35/ffffff/long-arrow-left.png" />
   </button>
+
+  <!-- Sidebar Logo  -->
   <div class="sidebar_logo">
     <img [src]="logoLink.icon" alt="icon" />
     <a [routerLink]="logoLink.link">{{ logoLink.name }}</a>
   </div>
+
+  <!-- Sidebar Links -->
   <div class="sidebar_links">
     <a [routerLink]="link.link" *ngFor="let link of sideBArLinks">
       <img [src]="link.icon" alt="icon" />

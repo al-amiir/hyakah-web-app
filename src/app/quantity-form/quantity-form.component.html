@@ -3,6 +3,10 @@
   [style.width]="productListService.quantityFormWidth"
 >
   <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <!-- Header  -->
+    <p>Add Quantity</p>
+
+    <!-- Cost Input  -->
     <div>
       <label for="cost">Cost</label>
       <input
@@ -15,6 +19,7 @@
       <span [hidden]="cost.valid || cost.pristine"> Cost is required </span>
     </div>
 
+    <!-- Quantity Input  -->
     <div>
       <label for="quantity">Quantity</label>
       <input
@@ -29,6 +34,7 @@
       </span>
     </div>
 
+    <!-- Fomr Button  -->
     <div class="form_container-buttons">
       <button type="button" (click)="cancel(); productForm.reset()">
         Cancel

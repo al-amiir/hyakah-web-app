@@ -1,9 +1,9 @@
 .searchBar {
-  padding: 0px 10px;
-  background-color: #e2e2e200;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 10px;
+  background-color: #e2e2e200;
   height: 100px;
   &-right {
     display: flex;
@@ -28,9 +28,8 @@
     display: flex;
     align-items: center;
     img {
-      background-color: #07191e;
-      border-radius: 7px;
-      border: 2px solid;
+      background-color: #2304026b;
+      border-radius: 8px;
     }
   }
 }

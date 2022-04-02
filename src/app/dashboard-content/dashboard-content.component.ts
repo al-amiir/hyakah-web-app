@@ -27,8 +27,7 @@ export class DashboardContentComponent implements OnInit {
     this.productList.editSelectedProductId(value);
   }
   toggle(e: any): void {
-    console.log(e.target.id);
-    if (e.target.id !== 'plusButton') {
+    if (e.target.id !== 'button-edit') {
       if (this.height === '0px') {
         this.height = '160px';
         this.rotate = 'rotateZ(180deg)';
@@ -36,7 +35,7 @@ export class DashboardContentComponent implements OnInit {
         this.height = '0px';
         this.rotate = 'rotateZ(0deg)';
       }
-    } else if (e.target.id === 'plusButton') {
+    } else if (e.target.id === 'button-edit') {
       if (this.height === '160px') {
         this.height = '0px';
         this.rotate = 'rotateZ(0deg)';

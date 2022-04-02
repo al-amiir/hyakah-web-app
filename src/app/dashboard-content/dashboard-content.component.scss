@@ -20,7 +20,7 @@
       &--image {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         &-arrow {
           background-color: red;
           border-radius: 5px;
@@ -37,19 +37,18 @@
           }
         }
       }
-      &--button {
+      &--button-edit {
         justify-self: end;
         margin-right: 30px;
         @media (max-width: 500px) {
           position: absolute;
-          bottom: 0;
+          bottom: 4px;
           left: 54%;
-          transform: translate(-50%) scale(0.7);
+          transform: translate(-50%);
         }
-        #plusButton {
-          background-color: #51c7cf;
+        #button-edit {
+          background-color: #f1c42d;
           border-radius: 5px;
-          filter: drop-shadow(2px 4px 6px black);
           padding: 1px;
         }
       }
@@ -66,6 +65,9 @@
       border-radius: 7px;
       padding: 4px;
       margin: 0px 10px;
+      &-profitmargin {
+        text-align: center;
+      }
     }
   }
 }

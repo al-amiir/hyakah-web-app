@@ -38,6 +38,10 @@ export class ProductFormComponent implements OnInit {
     };
   }
   onSubmit(): void {
+    // FAKE IMAGE URL , REMOVE LATER
+    this.formValues.images =
+      'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-products-sustainable-living-flaticons-lineal-color-flat-icons.png';
+    //
     this.productListService.addNewProduct(this.formValues);
     this.resetFromValues();
     this.productListService.changeFormWidth('0vw');

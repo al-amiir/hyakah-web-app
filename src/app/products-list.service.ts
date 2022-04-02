@@ -24,7 +24,7 @@ export class ProductsListService {
       this.products[id].cost === null ? 0 : this.products[id].cost;
     let currentQuantity =
       this.products[id].quantity === null ? 0 : this.products[id].quantity;
-
+    console.log({ currentAvgCost, cost, currentQuantity, quantity });
     // Second change the cost with the required equation
     this.products[id].cost =
       (currentAvgCost * currentQuantity + cost) / (currentQuantity + quantity);

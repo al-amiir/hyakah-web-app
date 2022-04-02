@@ -33,11 +33,10 @@ export class QuantityFormComponent implements OnInit {
     };
   }
   onSubmit(): void {
-    // this.productListService.add(this.quantityFormValues);
     this.productListService.editProduct(
       this.productListService.selectedProductId,
-      this.quantityFormValues.quantity || 0,
-      this.quantityFormValues.cost || 0
+      this.quantityFormValues.cost || 0,
+      this.quantityFormValues.quantity || 0
     );
     this.resetFromValues();
     this.productListService.changeQuantityFormWidth('0vw');
